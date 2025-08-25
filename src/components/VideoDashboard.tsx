@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaFolderOpen, FaTrash, FaPlay, FaTimes } from 'react-icons/fa';
 
 interface VideoHistory {
   id: string;
@@ -90,11 +91,11 @@ export const VideoDashboard: React.FC<VideoDashboardProps> = ({
         
         <div className="header-actions">
           <button onClick={onLoadNewVideo} className="btn btn-primary load-new-btn">
-            📁 Load New Video
+            <FaFolderOpen /> Load New Video
           </button>
           {videoHistory.length > 0 && (
             <button onClick={clearHistory} className="btn btn-secondary clear-btn">
-              🗑️ Clear History
+              <FaTrash /> Clear History
             </button>
           )}
         </div>
@@ -168,7 +169,7 @@ export const VideoDashboard: React.FC<VideoDashboardProps> = ({
                   className="btn btn-small btn-success"
                   title="Open video"
                 >
-                  ▶️
+                  <FaPlay />
                 </button>
                 <button
                   onClick={(e) => {
@@ -178,7 +179,7 @@ export const VideoDashboard: React.FC<VideoDashboardProps> = ({
                   className="btn btn-small btn-danger"
                   title="Remove from history"
                 >
-                  ✖️
+                  <FaTimes />
                 </button>
               </div>
             </div>
@@ -190,7 +191,7 @@ export const VideoDashboard: React.FC<VideoDashboardProps> = ({
         <div className="selection-footer">
           <div className="selection-info">
             <span>Selected: <strong>{selectedVideo.name}</strong></span>
-            <span className="selection-hint">Double-click or press ▶️ to open</span>
+            <span className="selection-hint">Double-click or press the button to open</span>
           </div>
           <button
             onClick={() => onVideoSelect(selectedVideo)}

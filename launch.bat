@@ -1,4 +1,4 @@
 @echo off
-cd d CToolsguitar-looper-new
+cd /d C:\Tools\guitar-looper-new
 npm run tauri dev
 pause
